@@ -1,0 +1,20 @@
+<%= error_messages_for(@empleado) %>
+
+<table summary="Empleado form fields">
+      <tr>
+        <th>Nombres</th>
+        <td><%= f.text_field(:nombres) %></td>
+      </tr>
+      <tr>
+        <th>Apellidos</th>
+        <td><%= f.text_field(:apellidos) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>RUT</th>
+        <td><%= f.text_field(:rut) %></td>
+      </tr>
+</table>

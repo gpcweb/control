@@ -1,0 +1,34 @@
+<% @page_title ="Empleados" %>
+
+<div class="empleados index">
+  <h2>Empleados</h2>
+
+  <%= link_to("Añadir nuevo Empleado", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Lista de Empleados">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>RUT</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+    <% @empleados.each do |empleado| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%=  empleado.id %></td>
+      <td><%=  empleado.nombres %></td>
+      <td><%=  empleado.apellidos %></td>
+      <td><%=  empleado.rut %></td>
+      <td class="center"><%= empleado.email %></td>
+      <td class="actions">
+        <%= link_to("Ver", {:action => 'show', :id => empleado.id}, :class => 'action show') %>
+        <%= link_to("Editar", {:action => 'edit', :id => empleado.id}, :class => 'action edit') %>
+        <%= link_to("Eliminar", {:action => 'delete', :id => empleado.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+

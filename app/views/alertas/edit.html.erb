@@ -1,0 +1,17 @@
+<% @page_title ="Actualizar Alerta" %>
+
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="alerta edit">
+  <h2>Actualizar Alerta</h2>
+
+  <%= form_for(:alerta, :url => {:action => 'update', :id => @alerta.id}) do |f| %>
+
+    <%= render(:partial => "form_alertas", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Actualizar Alerta") %>
+    </div>
+
+  <% end %>
+</div>

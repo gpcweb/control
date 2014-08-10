@@ -1,0 +1,33 @@
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="alerta show">
+  <h2>Alerta</h2>
+
+  <table summary="Alerta Info">
+    <tr>
+      <th>Empleado</th>
+      <td><%= "#{@alerta.empleado.nombres} #{@alerta.empleado.apellidos}" %></td>
+    </tr>
+    <tr>
+      <th>Tipo</th>
+      <td><%= @alerta.tipo %></td>
+    </tr>
+    <tr>
+      <th>Observacion</th>
+      <td><%= @alerta.observacion %></td>
+    </tr>
+    <tr>
+      <th>Fecha Vencimiento</th>
+      <td><%= @alerta.fecha_vencimiento.strftime("%d-%m-%Y") %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @alerta.created_at.strftime("%d-%m-%Y") %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @alerta.updated_at.strftime("%d-%m-%Y") %></td>
+    </tr>
+  </table>
+
+</div>

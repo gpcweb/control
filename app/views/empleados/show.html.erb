@@ -1,0 +1,34 @@
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="empleado show">
+  <h2>Empleado</h2>
+
+  <table summary="Empleado Info">
+    <tr>
+      <th>Nombres</th>
+      <td><%= @empleado.nombres %></td>
+    </tr>
+    <tr>
+      <th>Apellidos</th>
+      <td><%= @empleado.apellidos %></td>
+    </tr>
+    <tr>
+      <th>RUT</th>
+      <td><%= @empleado.rut %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @empleado.email %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @empleado.created_at.strftime("%d-%m-%Y") %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @empleado.updated_at.strftime("%d-%m-%Y") %></td>
+    </tr>
+  </table>
+
+</div>
+

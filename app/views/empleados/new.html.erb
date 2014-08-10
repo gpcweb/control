@@ -1,0 +1,17 @@
+<% @page_title ="Nuevo Empleado" %>
+
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="empleado new">
+  <h2>Añadir Empleado</h2>
+
+  <%= form_for(:empleado, :html => {:id => "empleado_nuevo"},:url => {:action => 'create'}) do |f| %>
+
+    <%= render(:partial => "form_empleados", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Crear Empleado") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<% @page_title ="Alertas" %>
+
+<div class="alertas index">
+ <h2>Alertas</h2>
+
+  <%= link_to("Añadir nueva Alerta", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Lista de Alertas">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Empleado</th>
+      <th>Tipo</th>
+      <th>Observacion</th>
+      <th>Vencimiento</th>
+    </tr>
+    <% @alertas.each do |alerta| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%=  alerta.id %></td>
+      <td><%=  "#{alerta.empleado.nombres} #{alerta.empleado.apellidos}" %></td>
+      <td><%=  alerta.tipo %></td>
+      <td><%=  alerta.observacion %></td>
+      <td><%=  alerta.fecha_vencimiento.strftime("%d-%m-%Y") %></td>
+      <td class="actions">
+        <%= link_to("Ver", {:action => 'show', :id => alerta.id}, :class => 'action edit') %>
+        <%= link_to("Editar", {:action => 'edit', :id => alerta.id}, :class => 'action edit') %>
+        <%= link_to("Eliminar", {:action => 'delete', :id => alerta.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+

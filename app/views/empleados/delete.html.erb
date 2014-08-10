@@ -1,0 +1,19 @@
+<% @page_title ="Eliminar Empleado" %>
+
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="empleado delete">
+  <h2>Eliminar Empleado</h2>
+
+  <%= form_for(:subject, :url => {:action => 'destroy', :id => @empleado.id}) do |f| %>
+
+    <p>Estas seguro de eliminar a este empleado?</p>
+
+    <p class="reference-name"><%= @empleado.nombres %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Eliminar Empleado") %>
+    </div>
+
+  <% end %>
+</div>

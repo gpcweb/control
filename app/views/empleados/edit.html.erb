@@ -1,0 +1,18 @@
+<% @page_title ="Actualizar Empleado" %>
+
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="empleado edit">
+  <h2>Actualizar Empleado</h2>
+
+  <%= form_for(:empleado, :url => {:action => 'update', :id => @empleado.id}) do |f| %>
+
+     <%= render(:partial => "form_empleados", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Actualizar Empleado") %>
+    </div>
+
+  <% end %>
+</div>
+

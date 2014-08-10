@@ -1,0 +1,20 @@
+<%= error_messages_for(@alerta) %>
+
+<table summary="Alerta form fields">
+      <tr>
+        <th>Empleado</th>
+        <td><%= f.select(:empleado_id, @empleados.map {|s| [s.nombres, s.id]}) %></td>
+      </tr>
+      <tr>
+        <th>Tipo</th>
+        <td><%= f.select(:tipo, ['EXAMEN', 'CARNET', 'LICENCIA']) %></td>
+      </tr>
+      <tr>
+        <th>Observacion</th>
+        <td><%= f.text_field(:observacion) %></td>
+      </tr>
+      <tr>
+        <th>Fecha Vencimiento</th>
+        <td><%= f.date_select(:fecha_vencimiento) %></td>
+      </tr>
+</table>

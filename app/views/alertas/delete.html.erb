@@ -1,0 +1,21 @@
+<% @page_title ="Eliminar Alerta" %>
+
+<%= link_to("<< Volver", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="alerta delete">
+  <h2>Eliminar Alerta</h2>
+
+  <%= form_for(:subject, :url => {:action => 'destroy', :id => @alerta.id}) do |f| %>
+
+    <p>Estas seguro de eliminar esta alerta?</p>
+
+    <p class="reference-name"><%= @alerta.tipo %></p>
+    <p class="reference-name"><%= @alerta.observacion %></p>
+    <p class="reference-name"><%= @alerta.fecha_vencimiento.strftime("%d-%m-%Y") %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Eliminar Alerta") %>
+    </div>
+
+  <% end %>
+</div>
