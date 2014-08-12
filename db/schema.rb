@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731164646) do
+ActiveRecord::Schema.define(version: 20140812003415) do
 
   create_table "alertas", force: true do |t|
     t.integer  "empleado_id"
@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20140731164646) do
     t.string   "rut",             limit: 20,              null: false
     t.string   "email",                      default: "", null: false
     t.string   "username",        limit: 10, default: "", null: false
-    t.string   "hashed_password", limit: 40
     t.integer  "perfil_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   add_index "empleados", ["rut"], name: "index_empleados_on_rut", using: :btree
