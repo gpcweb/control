@@ -2,6 +2,8 @@ class Empleado < ActiveRecord::Base
 	 has_many :alertas
 	 belongs_to :perfil
 
+	 has_secure_password
+
 	 validates :nombres, presence: { message: "no puede ser vacio"}, length: { minimum: 3, message: "debe tener minimo 3 caracteres"}, 
 	 format: { with: /\A[a-zA-Z]+\z/, message: "debe ser solo letras" }
 	 validates :apellidos, presence: { message: "no puede ser vacio"}, length: { minimum: 3, message: "debe tener minimo 3 caracteres"}, 
