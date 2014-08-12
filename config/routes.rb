@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
    root "empleado#index" 
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
