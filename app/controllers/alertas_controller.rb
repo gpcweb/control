@@ -2,6 +2,8 @@ class AlertasController < ApplicationController
   
    layout "admin"
 
+   before_action :confirm_logged_in
+
   def index
     @alertas = Alerta.order('fecha_vencimiento ASC')
   end
