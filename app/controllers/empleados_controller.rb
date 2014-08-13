@@ -53,6 +53,7 @@ class EmpleadosController < ApplicationController
 
   def destroy
     empleado = Empleado.find(params[:id])
+    empleado.alertas.destroy()
     empleado.destroy
     flash[:notice] = "Empleado '#{empleado.nombres}'' eliminado exitosamente"
     redirect_to(:action => 'index')
@@ -64,7 +65,7 @@ class EmpleadosController < ApplicationController
       # same as using "params[:subject]", except that it:
       # - raises an error if :subject is not present
       # - allows listed attributes to be mass-assigned
-      params.require(:empleado).permit(:nombres, :apellidos, :rut, :email)
+      params.require(:empleado).permit(:nombres, :apellidos, :rut, :email, :password)
     end
 
 
