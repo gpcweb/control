@@ -1,5 +1,5 @@
 class Empleado < ActiveRecord::Base
-	 has_many :alertas
+	 has_many :alertas, :dependent => :destroy
 	 belongs_to :perfil
 
 	 has_secure_password
