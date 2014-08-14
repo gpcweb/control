@@ -16,6 +16,7 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
+      <%= render(:partial => "application/menu") if session[:user_id] %> 
       <div id="content">
         <%= yield %>
       </div>
