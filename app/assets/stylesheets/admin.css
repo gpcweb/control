@@ -6,9 +6,10 @@
 #content h2 { width: 100%; text-align: center; }
 
 .login form { margin: 100px 250px; }
+.menu {margin: 0px 250px; border: 1px solid black; overflow: hidden;}
 .menu .identity { text-align: center; }
-.menu ul { margin: 3em 250px; list-style: none; }
-.menu ul li { margin-bottom: 1em; }
+.menu ul { list-style: none; margin: 0px; }
+.menu ul li { margin: 2px; padding: 2px; float: left;}
 
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
