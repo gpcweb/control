@@ -1,0 +1,10 @@
+<% @page_title = "Admin Menu" %>
+
+<div class="menu">
+  <ul>
+    <li>Bievenido: <%= session[:username] %></li>
+    <li><%= link_to("Administrar Empleados", :controller => 'empleados') %></li>
+    <li><%= link_to("Administrar Alertas", :controller => 'alertas') %></li>
+    <li><%= link_to("Cerrar Sesion", :controller => 'acceso',:action => 'logout') %></li>
+  </ul>
+</div>
