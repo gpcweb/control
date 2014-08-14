@@ -22,7 +22,7 @@ class AccesoController < ApplicationController
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
       flash[:notice] = "Login exitoso."
-      redirect_to(:action => 'index')
+      redirect_to(:controller => 'empleados', :action => 'index')
     else
       flash[:notice] = "Error en el username/password."
       redirect_to(:action => 'login')
