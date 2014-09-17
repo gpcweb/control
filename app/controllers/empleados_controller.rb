@@ -3,13 +3,14 @@ class EmpleadosController < ApplicationController
   layout "admin"
 
   before_action :confirm_logged_in
+  before_action :get_empleado, :only => [:show, :edit, :delete]
 
   def index
     @empleados = Empleado.all
   end
 
   def show
-    @empleado = Empleado.find(params[:id])
+    
   end
 
   def new
@@ -31,7 +32,7 @@ class EmpleadosController < ApplicationController
   end
 
   def edit
-    @empleado = Empleado.find(params[:id])
+    
   end
 
   def update
@@ -48,7 +49,7 @@ class EmpleadosController < ApplicationController
   end
 
   def delete
-    @empleado = Empleado.find(params[:id])
+    
   end
 
   def destroy
@@ -68,5 +69,8 @@ class EmpleadosController < ApplicationController
       params.require(:empleado).permit(:nombres, :apellidos, :rut, :email, :password)
     end
 
+    def get_empleado
+        @empleado = Empleado.find(params[:id])
+    end
 
 end
